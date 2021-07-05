@@ -1,0 +1,13 @@
+{
+	"Id": "SolastaElAntoniusFeatPack",
+	"DisplayName": "SolastaElAntoniusFeatPack",
+	"Author": "ElAntonius",
+	"Version": "0.0.1",
+	"ManagerVersion": "0.23.4",
+	"Requirements": [ "SolastaModApi" ],
+	"LoadAfter": [ "SolastaModApi" ],
+	"AssemblyName": "SolastaElAntoniusFeatPack.dll",
+	"EntryMethod": "SolastaElAntoniusFeatPack.Main.Load",
+	"Repository": "https://raw.githubusercontent.com/ElAntonius/SolastaElAntoniusFeatPack/main/SolastaElAntoniusFeatPack/Repository.json",
+	"HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/##"
+}

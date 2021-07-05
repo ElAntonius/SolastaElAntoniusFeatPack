@@ -1,0 +1,2 @@
+SolastaElAntoniusFeatPack/&FancySkeletonTitle	Fancy Skeleton
+SolastaElAntoniusFeatPack/&FancySkeletonDescription	I'm a fancy skeleton
