@@ -16,11 +16,6 @@ using ExtendedEnums = SolastaModHelpers.ExtendedEnums;
 
 namespace SolastaElAntoniusFeatPack
 {
-    class SolastaElAntoniusFeatPack
-    {
-        const string pack_guid = "03C523EB-91B9-4F1B-A697-804D1BC2D6DD";
-        public static Guid FP_GUID = new Guid(pack_guid);
-    }
 
     public class DualFlurryApplyConditionOnAttackHit : FeatureDefinition, NewFeatureDefinitions.IInitiatorApplyEffectOnAttackHit
     {

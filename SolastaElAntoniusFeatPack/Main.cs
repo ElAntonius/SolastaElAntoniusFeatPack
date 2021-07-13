@@ -63,7 +63,7 @@ namespace SolastaElAntoniusFeatPack
 
         internal static void OnGameReady()
         {
-            DualFlurryFeatBuilder.AddToFeatList();
+            if (Settings.dualFlurryEnable) DualFlurryFeatBuilder.AddToFeatList();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace SolastaElAntoniusFeatPack
     class DualFlurryFeatBuilder : BaseDefinitionBuilder<FeatDefinition>
     {
         const string DualFlurryFeatName = "DualFlurryFeat";
-        private static readonly string DualFlurryFeatNameGuid = GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, DualFlurryFeatName).ToString();
+        private static readonly string DualFlurryFeatNameGuid = GuidHelper.Create(Core.FP_GUID, DualFlurryFeatName).ToString();
 
         protected DualFlurryFeatBuilder(string name, string guid) : base(DatabaseHelper.FeatDefinitions.Ambidextrous, name, guid)
         {
@@ -50,7 +50,7 @@ namespace SolastaElAntoniusFeatPack
             return Helpers.FeatureBuilder<DualFlurryApplyConditionOnAttackHit>.createFeature
             (
                 "FeatureDualFlurry",
-                GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, "FeatureDualFlurry").ToString(),
+                GuidHelper.Create(Core.FP_GUID, "FeatureDualFlurry").ToString(),
                 "Feature/&DualFlurryTitle",
                 "Feature/&DualFlurryDescription",
                 null,
@@ -89,12 +89,12 @@ namespace SolastaElAntoniusFeatPack
         }
 
         public static ConditionDefinition CreateAndAddToDB()
-            => new ConditionDualFlurryApplyBuilder("ConditionDualFlurryApply", GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, "ConditionDualFlurryApply").ToString()).AddToDB();
+            => new ConditionDualFlurryApplyBuilder("ConditionDualFlurryApply", GuidHelper.Create(Core.FP_GUID, "ConditionDualFlurryApply").ToString()).AddToDB();
 
         public static ConditionDefinition GetOrAdd()
         {
             var db = DatabaseRepository.GetDatabase<ConditionDefinition>();
-            return db.TryGetElement("ConditionDualFlurryApply", GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, "ConditionDualFlurryApply").ToString()) ?? CreateAndAddToDB();
+            return db.TryGetElement("ConditionDualFlurryApply", GuidHelper.Create(Core.FP_GUID, "ConditionDualFlurryApply").ToString()) ?? CreateAndAddToDB();
         }
     }
 
@@ -119,12 +119,12 @@ namespace SolastaElAntoniusFeatPack
         }
 
         public static ConditionDefinition CreateAndAddToDB()
-            => new ConditionDualFlurryGrantBuilder("ConditionDualFlurryGrant", GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, "ConditionDualFlurryGrant").ToString()).AddToDB();
+            => new ConditionDualFlurryGrantBuilder("ConditionDualFlurryGrant", GuidHelper.Create(Core.FP_GUID, "ConditionDualFlurryGrant").ToString()).AddToDB();
 
         public static ConditionDefinition GetOrAdd()
         {
             var db = DatabaseRepository.GetDatabase<ConditionDefinition>();
-            return db.TryGetElement("ConditionDualFlurryGrant", GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, "ConditionDualFlurryGrant").ToString()) ?? CreateAndAddToDB();
+            return db.TryGetElement("ConditionDualFlurryGrant", GuidHelper.Create(Core.FP_GUID, "ConditionDualFlurryGrant").ToString()) ?? CreateAndAddToDB();
         }
 
         private static FeatureDefinition buildAdditionalActionDualFlurry()
@@ -132,7 +132,7 @@ namespace SolastaElAntoniusFeatPack
             return Helpers.CopyFeatureBuilder<FeatureDefinitionAdditionalAction>.createFeatureCopy
             (
                 "AdditionalActionDualFlurry",
-                GuidHelper.Create(SolastaElAntoniusFeatPack.FP_GUID, "AdditionalActionDualFlurry").ToString(),
+                GuidHelper.Create(Core.FP_GUID, "AdditionalActionDualFlurry").ToString(),
                 "Feature/&AdditionalActionDualFlurryTitle",
                 "Feature/&AdditionalActionDualFlurryDescription",
                 DatabaseHelper.FeatureDefinitionAdditionalActions.AdditionalActionSurgedMain.GuiPresentation.SpriteReference,
