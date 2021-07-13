@@ -1,2 +1,10 @@
-SolastaElAntoniusFeatPack/&FancySkeletonTitle	Fancy Skeleton
-SolastaElAntoniusFeatPack/&FancySkeletonDescription	I'm a fancy skeleton
+Feat/&DualFlurryTitle	Dual Flurry
+Feat/&DualFlurryDescription	You are a master of fighting with paired weapons. On any turn where you hit twice with melee attacks while wielding a weapon in each hand, you may make an additional off-hand attack.
+Feature/&DualFlurryTitle	Dual Flurry
+Feature/&DualFlurryDescription	You are a master of fighting with paired weapons. On any turn where you hit twice with melee attacks while wielding a weapon in each hand, you may make an additional off-hand attack.
+Feature/&AdditionalActionDualFlurryTitle	Dual Flurry!
+Feature/&AdditionalActionDualFlurryDescription	You may make an additional off-hand attack.
+Condition/&ConditionDualFlurryApplyTitle	Dual Flurry!
+Condition/&ConditionDualFlurryApplyDescription	You are building momentum...
+Condition/&ConditionDualFlurryGrantTitle	Dual Flurry!
+Condition/&ConditionDualFlurryGrantDescription	Your foes are reeling!
