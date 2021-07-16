@@ -47,7 +47,7 @@ namespace SolastaElAntoniusFeatPack
             var cond_apply = ConditionDualFlurryApplyBuilder.GetOrAdd();
             var cond_grant = ConditionDualFlurryGrantBuilder.GetOrAdd();
 
-            return Helpers.FeatureBuilder<DualFlurryApplyConditionOnAttackHit>.createFeature
+            return Helpers.FeatureBuilder<PrereqApplyConditionOnDamageDone>.createFeature
             (
                 "FeatureDualFlurry",
                 GuidHelper.Create(Core.FP_GUID, "FeatureDualFlurry").ToString(),
@@ -63,7 +63,8 @@ namespace SolastaElAntoniusFeatPack
                         cond_grant,
                         1,
                         RuleDefinitions.DurationType.Turn,
-                        RuleDefinitions.TurnOccurenceType.EndOfTurn
+                        RuleDefinitions.TurnOccurenceType.EndOfTurn,
+                        true, false, false
                     );
                 }
             );
