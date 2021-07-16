@@ -15,6 +15,7 @@ namespace SolastaElAntoniusFeatPack.Menus.Viewers
             if (Mod == null || !Mod.Enabled) return;
 
             UI.Toggle("Dual Flurry", ref Main.Settings.dualFlurryEnable, 0, UI.AutoWidth());
+            UI.Toggle("Torchbearer", ref Main.Settings.torchBearerEnable, 0, UI.AutoWidth());
         }
     }
 }

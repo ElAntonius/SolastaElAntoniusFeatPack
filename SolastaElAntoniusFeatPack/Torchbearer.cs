@@ -44,13 +44,55 @@ namespace SolastaElAntoniusFeatPack
 
         private static FeatureDefinition buildFeatureTorchbearer()
         {
-            return Helpers.FeatureBuilder<FeatureDefinitionPower>.createFeature
+            var light_restrict = new HasLightSourceRestriction();
+
+            var burn_effect = new EffectForm();
+            burn_effect.SetFormType(EffectForm.EffectFormType.Condition);
+            burn_effect.ConditionForm = new ConditionForm();
+            burn_effect.ConditionForm.Operation = ConditionForm.ConditionOperation.Add;
+            burn_effect.ConditionForm.ConditionDefinition = DatabaseHelper.ConditionDefinitions.ConditionOnFire1D4;
+
+            var burn_description = new EffectDescription();
+            burn_description.Copy(DatabaseHelper.SpellDefinitions.Fireball.EffectDescription);
+            burn_description.SetCreatedByCharacter(true);
+            burn_description.SetTargetSide(RuleDefinitions.Side.Enemy);
+            burn_description.SetTargetType(RuleDefinitions.TargetType.Individuals);
+            burn_description.SetTargetParameter(1);
+            burn_description.SetRangeType(RuleDefinitions.RangeType.Touch);
+            burn_description.SetDurationType(RuleDefinitions.DurationType.Turn);
+            burn_description.SetDurationParameter(3);
+            burn_description.SetCanBePlacedOnCharacter(false);
+            burn_description.SetHasSavingThrow(true);
+            burn_description.SetSavingThrowAbility("Dexterity");
+            burn_description.SetSavingThrowDifficultyAbility("Dexterity");
+            burn_description.SetDifficultyClassComputation(RuleDefinitions.EffectDifficultyClassComputation.AbilityScoreAndProficiency);
+            burn_description.SetSpeedType(RuleDefinitions.SpeedType.Instant);
+
+            burn_description.EffectForms.Clear();
+            burn_description.EffectForms.Add(burn_effect);
+
+            return Helpers.FeatureBuilder<NewFeatureDefinitions.PowerWithRestrictions>.createFeature
             (
                 "PowerTorchbearer",
                 GuidHelper.Create(Core.FP_GUID, "PowerTorchbearer").ToString(),
                 "Feature/&PowerTorchbearerTitle",
                 "Feature/&PowerTorchbearerDescription",
-                null
+                DatabaseHelper.FeatureDefinitionPowers.PowerDomainElementalFireBurst.GuiPresentation.SpriteReference,
+                a =>
+                {
+                    a.SetActivationTime(RuleDefinitions.ActivationTime.BonusAction);
+                    a.SetCostPerUse(0);
+                    a.SetEffectDescription(burn_description);
+                    a.SetFixedUsesPerRecharge(1);
+                    a.SetUsesDetermination(RuleDefinitions.UsesDetermination.Fixed);
+                    a.SetRechargeRate(RuleDefinitions.RechargeRate.AtWill);
+                    a.SetShowCasting(false);
+                    a.SetUniqueInstance(false);
+                    a.restrictions = new List<NewFeatureDefinitions.IRestriction>()
+                    {
+                        light_restrict
+                    };
+                }
             );
         }
     }

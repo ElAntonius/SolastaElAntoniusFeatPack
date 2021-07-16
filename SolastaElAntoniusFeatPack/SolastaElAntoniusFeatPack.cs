@@ -61,4 +61,19 @@ namespace SolastaElAntoniusFeatPack
             dest_char.RulesetCharacter.AddConditionOfCategory("10Combat", active_condition, true);
         }
     }
+
+    public class HasLightSourceRestriction : NewFeatureDefinitions.IRestriction
+    {
+        public bool isForbidden(RulesetActor character)
+        {
+            var hero = character as RulesetCharacterHero;
+            if (hero == null)
+            {
+                return true;
+            }
+            RulesetItem off_item = hero.CharacterInventory.InventorySlotsByName[EquipmentDefinitions.SlotTypeOffHand].EquipedItem;
+
+            return (off_item.ItemDefinition == null || !off_item.ItemDefinition.IsLightSourceItem);
+        }
+    }
 }

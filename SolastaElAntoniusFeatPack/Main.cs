@@ -64,6 +64,7 @@ namespace SolastaElAntoniusFeatPack
         internal static void OnGameReady()
         {
             if (Settings.dualFlurryEnable) DualFlurryFeatBuilder.AddToFeatList();
+            if (Settings.torchBearerEnable) TorchbearerFeatBuilder.AddToFeatList();
         }
     }
 }

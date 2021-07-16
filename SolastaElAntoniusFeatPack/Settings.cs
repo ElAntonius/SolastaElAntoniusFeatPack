@@ -12,5 +12,6 @@ namespace SolastaElAntoniusFeatPack
     public class Settings : UnityModManager.ModSettings
     {
         public bool dualFlurryEnable = true;
+        public bool torchBearerEnable = true;
     }
 }
