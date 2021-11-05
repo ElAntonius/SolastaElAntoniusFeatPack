@@ -63,8 +63,8 @@ namespace SolastaElAntoniusFeatPack
             burn_description.SetDurationParameter(3);
             burn_description.SetCanBePlacedOnCharacter(false);
             burn_description.SetHasSavingThrow(true);
-            burn_description.SetSavingThrowAbility("Dexterity");
-            burn_description.SetSavingThrowDifficultyAbility("Dexterity");
+            burn_description.SetSavingThrowAbility(Helpers.Stats.Dexterity);
+            burn_description.SetSavingThrowDifficultyAbility(Helpers.Stats.Dexterity);
             burn_description.SetDifficultyClassComputation(RuleDefinitions.EffectDifficultyClassComputation.AbilityScoreAndProficiency);
             burn_description.SetSpeedType(RuleDefinitions.SpeedType.Instant);
 

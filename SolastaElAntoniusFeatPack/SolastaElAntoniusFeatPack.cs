@@ -18,7 +18,7 @@ namespace SolastaElAntoniusFeatPack
 {
     public class PrereqApplyConditionOnDamageDone : FeatureDefinition, NewFeatureDefinitions.IInitiatorApplyEffectOnDamageDone
     {
-        // This implements an ApplyOnAttackHit Interface to define a prerequisite condition and a granted condition. If the
+        // This implements an ApplyOnDamageDone Interface to define a prerequisite condition and a granted condition. If the
         // attacker hits, the prereq condition is applied, but if the prereq condition is already acting on the attacker,
         // the grant condition is applied
         public bool apply_to_attacker;

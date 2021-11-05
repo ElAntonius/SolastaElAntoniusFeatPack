@@ -9,7 +9,7 @@
 		<RepositoryUrl>https://github.com/ElAntonius/SolastaElAntoniusFeatPack</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Configurations>Debug;Release;Debug Install;Release Install</Configurations>
-		<Authors>Zappastuff</Authors>
+		<Authors>ElAntonius</Authors>
 		<Company />
 		<Product />
 		<Copyright>Copyright � 2020</Copyright>
@@ -38,6 +38,7 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Install|AnyCPU'">
 		<Optimize>false</Optimize>
+		<PlatformTarget>x64</PlatformTarget>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
